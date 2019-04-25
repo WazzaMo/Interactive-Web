@@ -1,0 +1,80 @@
+@import url(css/common.css);
+
+body {
+  background-color: #202020;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><circle fill='%23181818' cx='6' cy='6' r='6' height='8'/><circle fill='%231a1a1a' cx='15' cy='15' r='4'/></svg>");
+}
+
+.text h1, h2, h3, p, a {
+  width: 80vw;
+  font-family: "Rubik", sans-serif;
+  color: #e8e8e8;
+  padding-top: 0;
+  padding-bottom: 0.5em;
+  margin: 0;
+}
+
+.text a:hover {
+  background-color: #444;
+}
+
+.text li {
+  color: #e8e8e8;
+}
+
+.text img {
+  padding-top: 1em;
+}
+
+.text .caption {
+  display: block;
+  padding-bottom: 1.5em;
+  color: #e8e8e8;
+  font-size: 0.8rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: italic;
+}
+
+/* General formatting for code */
+.text pre {
+  color: #e8e8e8;
+  font-family: 'Roboto Mono', monospace;
+  /* border: 1px solid gray;
+  border-radius: 6px; */
+  background-color: #004;
+  padding: 6px;
+  /* width: 600px; */
+}
+
+/* Special function */
+.text pre b {
+  color: yellow;
+}
+
+/* Function declaration */
+.text pre f {
+  color: #8f8;
+}
+
+/* Label - function or variable usage */
+.text pre l {
+  color: cyan;
+}
+
+.Section {
+  padding: 3.2em 0 0 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.Handle svg {
+  position: sticky;
+  top: 3.2em;
+  width: 8.5em;
+  padding: 0em 0.5em;
+}
+
+.text {
+  padding: 0;
+  margin: 0;
+}

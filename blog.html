@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blog</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <style>
+    .procsym {
+      font: normal 40px serif;
+      fill: white;
+      font-family: 'Alike', serif;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="Title">Technologies Blog</div>
+    <input type="checkbox" id="Nav-toggle" class="Nav-toggle">
+    <nav class="Nav">
+      <ul>
+        <li><a href="#PageTop">Intro</a></li>
+        <li><a href="#Processing-Desktop">Processing Computer</a></li>
+        <li><a href="#Processing-Web">Processing Web</a></li>
+        <li><a href="#">Processing Mobile</a></li>
+        <li><a href="#">Unity</a></li>
+        <li><a href="#">HTML</a></li>
+      </ul>
+    </nav>
+    <label for="Nav-toggle" class="Nav-toggle-label">
+      <svg width="30" height="20">
+        <rect x="0" y="0" width="30" height="3" fill="white"/>
+        <rect x="0" y="8" width="30" height="3" fill="white"/>
+        <rect x="0" y="16" width="30" height="3" fill="white"/>
+      </svg>
+    </label>
+  </header>
+
+
+  <div class="blog">
+
+      <div class="Section" id="PageTop">
+        <div class="Handle">
+          <svg height="50" >
+            <text x="0" y="30" font-size="32px" fill="white">Intro</text>
+          </svg>
+        </div>
+        <div class="text">
+          <h2>General Overview</h2>
+          <p>
+            This blog entry discusses different interactive technologies
+            that might be used to create a mobile, web or desktop (or laptop)
+            based experience that could complement or support an IoT project.
+            The technologies discussed are:
+          </p>
+          <ul>
+            <li>Processing - IDE and libraries</li>
+            <li>Unity Game Engine</li>
+            <li>HTML5 and Web Development</li>
+          </ul>
+        </div>
+      </div>
+      <div class="Section">
+        <div class="Handle">
+          <svg width="120" height="50">
+            <use href="#Processing" x="0" y="0" fill="white" mask="url(#_gap)" />
+            <text x="20" y="40" fill="white">Overview</text>
+          </svg>
+        </div>
+        <div class="text">
+          <h2>Processing Overview</h2>
+          <p>
+            Processing and the Processing IDE are cross-platform tools for introducing
+            people to programming. They are written in the Java language and run on the
+            Java runtime. What does this mean? It means that Processing runs on Macos, Windows
+            and Linux and that the way you express ideas in Processing is heavily influenced
+            by the ways that ideas are expressed in Java.
+          </p>
+          <p>
+            The Processing IDE was used to create the Arduino IDE so if it feels familiar,
+            this is why. Like the Arduino IDE, Processing files are called <i>sketches</i> and this
+            name actually makes more sense in Processing than it did in Arduino. Each Processing program
+            is a form of computer graphics or 'sketch.'
+          </p>
+          <p>
+            Processing has <i>modes</i> and the computer based mode (Windows, Macos, Linux) is the default.
+            There are other modes available that can be downloaded and added to the IDE, such as Web
+            development, using JavaScript, and Android development using an Android Java environment.
+          </p>
+          <img src="images/Process-desktop-Mode.png">
+          <span class="caption">Mode button 'Java' top-right of the Sketch window.</span>
+        </div>
+      </div>
+
+    <div class="Section" id="Processing-Desktop">
+      <div class="Handle">
+        <svg width="120" height="50">
+          <use href="#Processing" x="0" y="0" fill="white" mask="url(#_gap)" />
+          <text x="20" y="40" fill="white">Computer</text>
+        </svg>
+      </div>
+      <div class="text">
+        <h2>Processing on the Desktop / Laptop</h2>
+        <p>
+          Processing on a personal computer can be used to create rich visualizations
+          and programs that communicate with external hardware (i.e., Arduino) via serial port,
+          Raspberry Pi, motion sensors and so on.
+        </p>
+        <p>
+          For visualization, it is capable of 2D and 3D graphics, video playback and various forms of animation.
+          This is possible through a wide variety of libraries written by members of the Processing Community.
+        </p>
+        <p>
+          A Processing program is called a sketch. These are written in a cut-down version of Java.
+          It is 'cut-down' because you don't need to think about traditional encapsulation with private and public methods.
+          Classes are supported but, for a simple sketch, are not needed.
+          A sketch is made up of special functions:
+        </p>
+        <ol>
+          <li>setup()</li>
+          <li>draw()</li>
+          <li>mousePressed()</li>
+        </ol>
+        <p>
+          The <em>setup()</em> function initializes the environment - any variables or object needed for the
+          visualization, simulation or graphics. The <em>draw()</em> function is repeatedly called by the
+          Processing environment to draw the next frame.
+        </p>
+        <h3>Example Sketch - RadialGradient - Supplied with Processing</h3>
+        <pre>
+/**
+* Radial Gradient. 
+* 
+* Draws a series of concentric circles to create a gradient 
+* from one color to another.
+*/
+
+int <l>dim</l>;
+
+void <b>setup()</b> {
+  <l>size</l>(640, 360);
+  <l>dim</l> = <l>width</l>/2;
+  <l>background</l>(0);
+  <l>colorMode</l>(HSB, 360, 100, 100);
+  <l>noStroke</l>();
+  <l>ellipseMode</l>(RADIUS);
+  <l>frameRate</l>(1);
+}
+
+void <b>draw()</b> {
+  <l>background</l>(0);
+  for (int <l>x</l> = 0; <l>x</l> &lt;= <l>width</l>; <l>x</l>+=<l>dim</l>) {
+    <l>drawGradient</l>(<l>x</l>, <l>height</l>/2);
+  } 
+}
+
+void <f>drawGradient</f>(float x, float y) {
+  int <l>radius</l> = <l>dim</l>/2;
+  float <l>h</l> = <l>random</l>(0, 360);
+  for (int <l>r</l> = <l>radius</l>; <l>r</l> > 0; --<l>r</l>) {
+    <l>fill</l>(h, 90, 90);
+    <l>ellipse</l>(<l>x</l>, <l>y</l>, <l>r</l>, <l>r</l>);
+    <l>h</l> = (<l>h</l> + 1) % 360;
+  }
+}
+        </pre>
+        <h3>Observations on Desktop Sketch Language</h3>
+        <p>
+          Function (or method) declarations, for-loops, variable declarations and object
+          creation (uses <b>new</b> operator) are all from the <em>Java</em> language.
+          Note that the sketch language is translated into Java and Processing 
+          changes the normal flow of Java. If you hit a problem when developing your
+          project, you need to find examples or ask questions from the Processing Community
+          to get help. You can't seek help from Java documentation because Processing's Sketch
+          files don't follow Java conventions or work in the exact same way that Java does.
+        </p>
+        <p>
+          The good news is that there is a lot of power in the provided libraries, the
+          documentation is quite good and the community shares a lot of very useful code.
+        </p>
+      </div>
+    </div>
+
+    <div class="Section" id="Processing-Web">
+      <div class="Handle">
+        <svg width="120" height="50">
+          <use href="#Processing" x="0" y="0" fill="white" mask="url(#_gap)" />
+          <text x="20" y="40" fill="white">Web</text>
+        </svg>
+      </div>
+      <div class="text">
+        <h2>Processing on the Web</h2>
+        <p>
+          There is a <b>P5JS</b> mode which uses JavaScript and HTML.
+          No examples for P5JS mode are available from the IDE (unlike Java).
+          Instead, you need to perform an internet search to find useful examples.
+        </p>
+        <img src="images/processing-p5js-mode-tabs.png"><br>
+        <span class="caption">JavaScript and HTML tabs</span>
+        <img src="images/processing-p5js-mode-button.png"><br>
+        <span class="caption">p5.js Mode Button</span>
+        <p>
+          The good news is that many examples can be found at <a href="https://p5js.org">p5js.org</a>
+          such as this <a href="https://p5js.org/examples/simulate-snowflakes.html">Snowflake example</a>.
+        </p>
+        <pre>
+let <l>snowflakes</l> = []; // array to hold snowflake objects
+
+function <b>setup</b>() {
+  <l>createCanvas</l>(400, 600);
+  <l>fill</l>(240);</l>
+  <l>noStroke</l>();
+}
+
+function <b>draw</b>() {
+  <l>background</l>('brown');
+  let <l>t</l> = <l>frameCount</l> / 60; // update time
+
+  // create a random number of snowflakes each frame
+  for (let <l>i</l> = 0; <l>i</l> &lt; <l>random</l>(5); <l>i</l>++) {
+    <l>snowflakes</l>.<l>push</l>(new <l>snowflake</l>()); // append snowflake object
+  }
+
+  // loop through snowflakes with a for..of loop
+  for (let <l>flake</l> of <l>snowflakes</l>) {
+    <l>flake</l>.<l>update</l>(<l>t</l>); // update snowflake position
+    <l>flake</l>.<l>display</l>(); // draw snowflake
+  }
+}
+
+// snowflake class
+function <f>snowflake</f>() {
+  // initialize coordinates
+  <l>this</l>.<l>posX</l> = 0;
+  <l>this</l>.<l>posY</l> = <l>random</l>(-50, 0);
+  <l>this</l>.<l>initialangle</l> = <l>random</l>(0, 2 * PI);
+  <l>this</l>.<l>size</l> = <l>random</l>(2, 5);
+
+  // radius of snowflake spiral
+  // chosen so the snowflakes are uniformly spread out in area
+  <l>this</l>.<l>radius</l> = <l>sqrt</l>(<l>random</l>(<l>pow</l>(<l>width</l> / 2, 2)));
+  
+  <l>this</l>.<l>update</l> = function(<l>time</l>) {
+    // x position follows a circle
+    let <l>w</l> = 0.6; // angular speed
+    let <l>angle</l> = <l>w</l> * <l>time</l> + <l>this</l>.<l>initialangle</l>;
+    <l>this</l>.<l>posX</l> = <l>width</l> / 2 + <l>this</l>.<l>radius</l> * <l>sin</l>(<l>angle</l>);
+
+    // different size snowflakes fall at slightly different y speeds
+    <l>this</l>.<l>posY</l> += <l>pow</l>(<l>this</l>.<l>size</l>, 0.5);
+
+    // delete snowflake if past end of screen
+    if (<l>this</l>.<l>posY</l> &gt; <l>height</l>) {
+      let <l>index</l> = <l>snowflakes</l>.<l>indexOf</l>(<l>this</l>);
+      <l>snowflakes</l>.<l>splice</l>(index, 1);
+    }
+  };
+
+  <l>this</l>.<l>display</l> = <l>function</l>() {
+    <l>ellipse</l>(<l>this</l>.<l>posX</l>, <l>this</l>.<l>posY</l>, <l>this</l>.<l>size</l>);
+  };
+}
+        </pre>
+      </div>
+    </div>
+
+  </div>
+
+  <svg width="100" height="200" viewBox="0 0 200 200">
+    <rect x="0" y="0" width="200" height="80" fill="#333" />
+    <use href="#Processing" x="0" y="0" fill="red" mask="url(#_gap)" />
+    <use href="#Unity" x="40" y="5" />
+  </svg>
+</body>
+
+<svg width="0" height="0">
+  <defs>
+    <clipPath id="break-P">
+      <rect x="35" y="0" width="24" height="100" />
+    </clipPath>
+    <linearGradient id="Gradient">
+      <stop offset="0" stop-color="black" />
+      <stop offset="1" stop-color="white" />
+    </linearGradient>
+
+    <mask id="_gap2">
+      <use href="#MaskBoxes" />
+    </mask>
+    <mask id="_gap">
+      <rect x="0" y="0" width="10" height="20" fill="white" />
+      <rect x=11 y="0" width="3" height="20" fill="black" />
+      <rect x="15" y="0" width="30" height="20" fill="white" />
+      <rect x="0" y="19" width="50" height="20" fill="white" />
+    </mask>
+  </defs>
+  <text id="Processing" class="procsym" x="0" y="30">P</text>
+  <circle id="myBall" cx="20" cy="20" r="20" fill="green" />
+  <path id="Unity"
+    d="M 19.087 19.055 L 14.965 11.879 L 19.087 4.704 L 21.074 11.879 L 19.087 19.055 Z M 9.913 18.355 L 4.735 13.039 L 12.978 13.039 L 17.1 20.214 L 9.913 18.355 Z M 9.913 5.381 L 17.079 3.522 L 12.957 10.698 L 4.714 10.698 L 9.913 5.381 Z M 20.44 0 L 11.076 2.516 L 9.681 4.988 L 6.869 4.966 L 0 11.879 L 6.869 18.792 L 9.681 18.77 L 11.076 21.242 L 20.44 23.78 L 22.955 14.352 L 21.539 11.901 L 22.955 9.45 L 20.44 0 Z M 41.703 6.978 C 40.457 6.978 39.611 7.526 38.977 8.532 L 38.935 8.532 L 38.935 7.241 L 36.736 7.241 L 36.736 16.735 L 38.977 16.735 L 38.977 11.355 C 38.977 10.063 39.759 9.166 40.837 9.166 C 41.851 9.166 42.612 9.8 42.612 10.916 L 42.612 16.758 L 44.853 16.758 L 44.853 10.544 C 44.874 8.467 43.606 6.978 41.703 6.978 Z M 33.333 12.732 C 33.333 14.001 32.636 14.876 31.494 14.876 C 30.459 14.876 29.803 14.264 29.803 13.149 L 29.803 7.241 L 27.563 7.241 L 27.563 13.586 C 27.563 15.663 28.704 17.02 30.754 17.02 C 32.044 17.02 32.762 16.517 33.376 15.641 L 33.439 15.641 L 33.439 16.758 L 35.595 16.758 L 35.595 7.241 L 33.354 7.241 L 33.354 12.732 L 33.333 12.732 Z M 46.058 7.241 L 48.298 7.241 L 48.298 16.735 L 46.058 16.735 L 46.058 7.241 Z M 46.058 4.288 L 48.298 4.288 L 48.298 6.191 L 46.058 6.191 L 46.058 4.288 Z M 61.002 7.241 L 59.67 11.529 C 59.374 12.403 59.142 13.608 59.142 13.608 L 59.078 13.608 C 59.078 13.608 58.782 12.403 58.487 11.529 L 56.986 7.241 L 54.576 7.241 L 57.049 14.001 C 57.578 15.445 57.746 16.058 57.746 16.583 C 57.746 17.37 57.345 17.874 56.394 17.874 L 55.527 17.874 L 55.527 19.864 L 56.964 19.864 C 58.825 19.864 59.48 19.098 60.178 16.998 L 63.411 7.263 L 61.002 7.263 L 61.002 7.241 Z M 52.483 13.958 L 52.483 8.926 L 53.921 8.926 L 53.921 7.263 L 52.483 7.263 L 52.483 4.288 L 50.243 4.288 L 50.243 7.241 L 48.975 7.241 L 48.975 8.904 L 50.243 8.904 L 50.243 14.482 C 50.243 16.276 51.554 16.758 52.737 16.758 C 53.709 16.758 53.963 16.713 53.963 16.713 L 53.963 14.876 L 53.392 14.876 C 52.864 14.898 52.483 14.658 52.483 13.958 Z"
+    fill-rule="nonzero" fill="#FFF" />
+  <!-- <path id="Unity" d="M82.775 79.842L64.9 49.775l17.875-30.067 8.617 30.067-8.617 30.067zm-39.783-2.934L20.533 54.633h35.75L74.158 84.7l-31.166-7.792zm0-54.358l31.075-7.792-17.875 30.067h-35.75l22.55-22.275zM88.642 0L48.033 10.542 41.983 20.9l-12.191-.092L0 49.775l29.792 28.967 12.191-.092 6.05 10.358 40.609 10.634L99.55 60.133l-6.142-10.266L99.55 39.6 88.642 0zm92.216 29.242c-5.408 0-9.075 2.291-11.825 6.508h-.183v-5.408h-9.533v39.783h9.716v-22.55c0-5.408 3.392-9.167 8.067-9.167 4.4 0 7.7 2.659 7.7 7.334v24.475h9.717V44.183c.091-8.708-5.409-14.941-13.659-14.941zm-36.3 24.108c0 5.317-3.025 8.983-7.975 8.983-4.491 0-7.333-2.566-7.333-7.241v-24.75h-9.717v26.583c0 8.708 4.95 14.392 13.842 14.392 5.592 0 8.708-2.109 11.367-5.775h.275v4.675h9.35V30.342h-9.717V53.35h-.092zm55.184-23.008h9.716v39.783h-9.716V30.342zm0-12.375h9.716v7.975h-9.716v-7.975zm64.808 12.375l-5.775 17.966c-1.283 3.667-2.292 8.709-2.292 8.709h-.275s-1.283-5.042-2.566-8.709l-6.509-17.966h-10.45l10.725 28.325c2.292 6.05 3.025 8.616 3.025 10.816 0 3.3-1.741 5.409-5.866 5.409h-3.759v8.341h6.234c8.066 0 10.908-3.208 13.933-12.008L275 30.433h-10.45v-.091zm-36.942 28.141V37.4h6.234v-6.967h-6.234V17.967h-9.716v12.375h-5.5v6.966h5.5v23.375c0 7.517 5.683 9.534 10.816 9.534 4.217 0 5.317-.184 5.317-.184v-7.7h-2.475c-2.292.092-3.942-.916-3.942-3.85z"
+        fill-rule="nonzero" fill="#FFF"
+    /> -->
+
+</svg>
+
+
+</html>

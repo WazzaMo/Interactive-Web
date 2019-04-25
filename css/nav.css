@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+}
+
+:root {
+  --hdr-bkgnd: rgba(32,170,255,0.85);
+  --widescreen: 1024px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Nav Styles */
+
+header {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: fixed;
+  background: var(--hdr-bkgnd);
+  width: 100%;
+  height: 3em;
+  z-index: 999;
+}
+
+.Title {
+  margin: 0;
+  font-family: 'Khand', sans-serif;
+  padding: 0.5em 0;
+}
+
+.Nav {
+    transition: transform 0s ease-in-out 0;
+    transform: rotate(0deg);
+    transform-origin: top left;
+}
+
+.Nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.Nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+.Nav a {
+  color: #e8e8e8;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 800;
+}
+
+.Header-gap {
+  height: 3em;
+}
+
+/* ----------------- Mobile ------------ */
+@media screen and (max-width: 1023px) {
+  .Title {
+    font-size: 1.5em;
+  }
+
+  .Nav {
+    position: absolute;
+    background: var(--hdr-bkgnd);
+    text-align: left;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transition: transform 200ms ease-in-out;
+    transform: rotate(-180deg);
+    transform-origin: top left;
+  }
+
+  .Nav a:hover {
+    color: white;
+  }
+
+  .Nav-toggle:checked ~ .Nav {
+    transform: rotate(0deg);
+  }
+
+  .Nav-toggle { display: none; }
+
+  .Nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    margin-left: 1em;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* -- Laptop and PC -- */
+@media screen and (min-width: 1024px) {
+
+  header {
+    height: 3em;
+    display: grid;
+    grid-template-columns: 1fr auto minmax(650px, 850px) 1fr;
+  }
+
+  .Title {
+    grid-column: 2;
+    padding: 0.6em 0;
+    font-size: 1.4em;
+  }
+
+  .Nav {
+    grid-column: 3;
+    color: white;
+    transition: transform 0s linear;
+  }
+
+  .Nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .Nav li {
+    display: inline-block;
+    /* margin-left: 0.5em; */
+    padding: 1em 0;
+  }
+
+  .Nav a {
+    color: #E8E8E8;
+    font-size: 0.9em;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .Nav a:hover {
+    color: white;
+  }
+
+  .Nav-toggle, .Nav-toggle-label {
+    display: none;
+  }
+
+}
+
+/*
+ *  References:
+ *    Responsive Menu built using techniques from Kevin Powell's YouTube video - https://www.youtube.com/watch?v=8QKOaTYvYUA
+ *
+ *  Transitions:  opacity, scale, translate, rotate.
+ */
