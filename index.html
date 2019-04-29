@@ -4,11 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Interactive Web</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/nav.css">
+
 </head>
 <body>
-  <header>Choose</header>
-  <a href="./blog.html">Blog</a>
-  <a href="svg-example.html">SVG Example</a>
+
+  <header>
+      <div class="Title">Interactive Web Demo</div>
+      <input type="checkbox" id="Nav-toggle" class="Nav-toggle">
+      <nav class="Nav">
+        <ul>
+          <li><a href="blog.html">Blog: Processing vs Unity vs Web</a></li>
+          <li><a href="svg-example.html">SVG Examples</a></li>
+        </ul>
+      </nav>
+      <label for="Nav-toggle" class="Nav-toggle-label">
+        <svg width="30" height="20">
+          <rect x="0" y="0" width="30" height="3" fill="white"/>
+          <rect x="0" y="8" width="30" height="3" fill="white"/>
+          <rect x="0" y="16" width="30" height="3" fill="white"/>
+        </svg>
+      </label>
+    </header>
+
+    <div class="Section">
+      <div class="text">
+        <h1>An Interactive Web Demo</h1>
+        <p>
+          For Monash University Arts Design and Architecture Interaction Design
+          class for MDC 5310 - Interaction Design Studio.
+        </p>
+      </div>
+    </div>
 </body>
 </html>

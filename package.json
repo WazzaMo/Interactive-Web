@@ -1,10 +1,10 @@
 {
-  "name": "Interactive-Web",
+  "name": "interactive-web",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "live-server --port=8080 --host=0.0.0.0"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/WazzaMo/Interactive-Web/issues"
   },
-  "homepage": "https://github.com/WazzaMo/Interactive-Web#readme"
+  "homepage": "https://github.com/WazzaMo/Interactive-Web#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
 }

@@ -39,11 +39,8 @@ body {
 .text pre {
   color: #e8e8e8;
   font-family: 'Roboto Mono', monospace;
-  /* border: 1px solid gray;
-  border-radius: 6px; */
   background-color: #004;
   padding: 6px;
-  /* width: 600px; */
 }
 
 /* Special function */
