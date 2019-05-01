@@ -16,6 +16,7 @@ body {
 header {
   margin: 0;
   padding: 0;
+  top: 0;
   text-align: center;
   position: fixed;
   background: var(--hdr-bkgnd);
@@ -63,7 +64,7 @@ header {
 /* ----------------- Mobile ------------ */
 @media screen and (max-width: 1023px) {
   .Title {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 
   .Nav {
@@ -110,8 +111,7 @@ header {
 
   .Title {
     grid-column: 2;
-    padding: 0.6em 0;
-    font-size: 1.4em;
+    font-size: 1.2em;
   }
 
   .Nav {

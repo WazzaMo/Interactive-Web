@@ -24,6 +24,7 @@
     <input type="checkbox" id="Nav-toggle" class="Nav-toggle">
     <nav class="Nav">
       <ul>
+        <li><a href="/">Home</a></li>
         <li><a href="#PageTop">Intro</a></li>
         <li><a href="#Processing-Desktop">Processing Computer</a></li>
         <li><a href="#Processing-Web">Processing Web</a></li>
@@ -67,7 +68,7 @@
       </div>
       <div class="Section">
         <div class="Handle">
-          <svg width="120" height="50">
+          <svg width="120" height="50" viewBox="0 0 100 50">
             <use href="#Processing" x="0" y="0" fill="white" />
             <text x="20" y="40" fill="white">Overview</text>
           </svg>
@@ -99,7 +100,7 @@
 
     <div class="Section" id="Processing-Desktop">
       <div class="Handle">
-        <svg width="120" height="50">
+        <svg width="120" height="50" viewBox="0 0 100 50">
           <use href="#Processing" x="0" y="0" fill="white" />
           <text x="20" y="40" fill="white">Computer</text>
         </svg>
@@ -188,7 +189,7 @@ void <f>drawGradient</f>(float x, float y) {
 
     <div class="Section" id="Processing-Web">
       <div class="Handle">
-        <svg width="120" height="50">
+        <svg width="120" height="50" viewBox="0 0 100 50">
           <use href="#Processing" x="0" y="0" fill="white" />
           <text x="20" y="40" fill="white">Web</text>
         </svg>
@@ -270,7 +271,7 @@ function <f>snowflake</f>() {
     </div>
     <div class="Section" id="Processing-Mobile">
       <div class="Handle">
-        <svg width="120" height="50">
+        <svg width="120" height="50" viewBox="0 0 100 50">
           <use href="#Processing" x="0" y="0" fill="white" />
           <text x="20" y="40" fill="white">Mobile</text>
         </svg>
@@ -328,11 +329,11 @@ function <f>snowflake</f>() {
     
         <mask id="P_gap">
             <rect x="5" y="0" width="50" height="35" fill="white" />
-            <rect x="13.2" y="2" width="3" height="20" fill="black" />
+            <rect x="13.5" y="0" width="3.2" height="20" fill="black" />
         </mask>
         <g id="Processing">
           <circle cx="14" cy="17" r="17" fill="#333" />
-          <text id="ProcessingP" class="procsym" x="5" y="30" mask="url(#P_gap)">P</text>
+          <text id="ProcessingP" class="procsym" x="4" y="32" mask="url(#P_gap)">P</text>
         </g>
 
         <path id="UnityLogo"
