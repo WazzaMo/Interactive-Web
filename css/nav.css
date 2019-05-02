@@ -111,7 +111,8 @@ header {
 
   .Title {
     grid-column: 2;
-    font-size: 1.2em;
+    font-size: 1.4em;
+    padding: 0.1em 0;
   }
 
   .Nav {
@@ -121,6 +122,8 @@ header {
   }
 
   .Nav ul {
+    display: flex;
+    flex-direction: row;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -128,8 +131,7 @@ header {
 
   .Nav li {
     display: inline-block;
-    /* margin-left: 0.5em; */
-    padding: 1em 0;
+    padding: 0.2em 0;
   }
 
   .Nav a {
