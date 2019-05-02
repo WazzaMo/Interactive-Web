@@ -10,7 +10,7 @@ svg {
   display: block;
 }
 
-.text h1, h2, h3, p, a {
+.text h1, h2, h3, p, a, li {
   width: 80vw;
   font-family: "Rubik", sans-serif;
   color: #e8e8e8;
